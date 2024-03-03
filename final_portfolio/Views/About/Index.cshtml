@@ -1,0 +1,21 @@
+﻿<!--===== ABOUT =====-->
+@model About
+<section class="about section " id="about">
+    <h2 class="section-title">About</h2>
+
+    <div class="about__container bd-grid">
+        <div class="about__img">
+            <img src="assets/img/about.jpg" alt="">
+        </div>
+
+        <div>
+            <h2 class="about__subtitle">I'am Swapnil</h2>
+            <p class="about__text">@Model.Description</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" style="display: inline-block; padding: 8px 16px; background-color: #007BFF; color: #fff; text-decoration: none; border: 1px solid #007BFF; border-radius: 5px;">Edit</a>
+            }
+            
+        </div>
+    </div>
+</section>

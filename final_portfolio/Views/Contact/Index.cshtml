@@ -1,0 +1,15 @@
+﻿ <!--===== CONTACT =====-->
+ @model Contact
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact__container bd-grid">
+        <form method="post" action="" class="contact__form">
+            <input asp-for="Name" type="text" placeholder="Name" class="contact__input">
+            <input asp-for="Email" type="mail" placeholder="Email" class="contact__input">
+            <textarea asp-for="Message" id="" cols="0" rows="10" class="contact__input"></textarea>
+            <input type="submit" value="Send" class="contact__button button">
+        </form>
+    </div>
+</section>
+        

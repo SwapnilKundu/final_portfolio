@@ -1,0 +1,53 @@
+﻿.section_form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f5f9; /* Light blue background */
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Increased width */
+    text-align: left; /* Left-aligned content */
+}
+
+input {
+    width: calc(100% - 30px);
+    padding: 15px; /* Increased padding */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #3498db;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    input:hover {
+        border-color: #2980b9; /* Darker blue on hover */
+    }
+
+    input:focus {
+        border-color: #2980b9; /* Darker blue on focus */
+        box-shadow: 0 0 10px rgba(52, 152, 219, 0.3); /* Light shadow on focus */
+    }
+
+button {
+    background: #3498db; /* Blue button */
+    color: #fff;
+    padding: 15px 20px; /* Increased padding */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+    button:hover {
+        background: #2980b9; /* Darker blue on hover */
+    }

@@ -1,0 +1,47 @@
+﻿ <!--===== SKILLS =====-->
+ @model List<Skill>
+
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills__container bd-grid">
+        <div>
+            <h2 class="skills__subtitle">Profesional Skills</h2>
+            <p class="skills__text">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Skill" asp-action="Create" style="text-decoration: none; color: #007BFF; font-weight: bold; border-bottom: 2px solid #007BFF; transition: border-bottom 0.3s;">
+                        Create Skill
+                    </a>
+                }
+                
+            </p>
+
+            @foreach(var skill in Model)
+            {
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <i class='bx bxl-html5 skills__icon'></i>
+                        <span class="skills__name">@skill.Name</span>
+                    </div>
+                    <div class="skills__bar skills__html">
+                    </div>
+                    <div>
+                        <span class="skills__percentage">@skill.Level</span>
+                    </div>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div style="margin-bottom: 25px">
+                        <a asp-route-id="@skill.Id" asp-controller="Skill" asp-action="Edit" style="text-decoration: none; color: #007bff; padding: 5px 10px; border: 1px solid #007bff; border-radius: 5px; background-color: #f8f9fa; margin-right: 10px;">Edit</a>
+                        <span>|</span>
+                        <a asp-route-id="@skill.Id" asp-controller="Skill" asp-action="Delete" style="text-decoration: none; color: #dc3545; padding: 5px 10px; border: 1px solid #dc3545; border-radius: 5px; background-color: #f8f9fa;">Delete</a>
+                    </div>
+                }
+            }
+        </div>
+        <div>
+            <img src="assets/img/work3.jpg" alt="" class="skills__img">
+        </div>
+    </div>
+</section>

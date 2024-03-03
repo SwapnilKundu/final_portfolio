@@ -1,0 +1,26 @@
+﻿@model List<Contact>
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr style="background-color: #007BFF; color: #fff;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var message in Model)
+        {
+            <tr style="border: 1px solid #ddd;">
+                <td style="padding: 10px; border: 1px solid #ddd;">@message.Name</td>
+                
+                <td style="padding: 10px; border: 1px solid #ddd;">@message.Message</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    <a href="mailto:@message.Email">Reply</a>
+                    <span> | </span>
+                    <a asp-route-id="@message.Id" asp-controller="Message" asp-action="Delete">Delete</a>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
